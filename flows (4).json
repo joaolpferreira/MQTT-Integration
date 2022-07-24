@@ -1,0 +1,481 @@
+[
+    {
+        "id": "5a330b7698e70287",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "2928f4f5215392e3",
+        "type": "debug",
+        "z": "5a330b7698e70287",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 490,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "54571a8095a7f8f6",
+        "type": "mqtt in",
+        "z": "5a330b7698e70287",
+        "name": "",
+        "topic": "ISCF/accel_x",
+        "qos": "1",
+        "datatype": "auto",
+        "broker": "e932a15ab698c4eb",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 210,
+        "y": 80,
+        "wires": [
+            [
+                "2928f4f5215392e3",
+                "cd9ce00a0dc075a9"
+            ]
+        ]
+    },
+    {
+        "id": "b87fddfb647bd7c3",
+        "type": "debug",
+        "z": "5a330b7698e70287",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 490,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "91ef119884e8b506",
+        "type": "mqtt in",
+        "z": "5a330b7698e70287",
+        "name": "",
+        "topic": "ISCF/accel_y",
+        "qos": "1",
+        "datatype": "auto",
+        "broker": "e932a15ab698c4eb",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 230,
+        "y": 220,
+        "wires": [
+            [
+                "b87fddfb647bd7c3",
+                "7078e6d14b0dc0bb"
+            ]
+        ]
+    },
+    {
+        "id": "c5ad97d3780ef49e",
+        "type": "debug",
+        "z": "5a330b7698e70287",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 490,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "5e5ed29ddf634043",
+        "type": "mqtt in",
+        "z": "5a330b7698e70287",
+        "name": "",
+        "topic": "ISCF/accel_z",
+        "qos": "1",
+        "datatype": "auto",
+        "broker": "e932a15ab698c4eb",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 290,
+        "y": 380,
+        "wires": [
+            [
+                "c5ad97d3780ef49e",
+                "4ced84fcb435595d"
+            ]
+        ]
+    },
+    {
+        "id": "580b0918b9758da6",
+        "type": "ui_chart",
+        "z": "5a330b7698e70287",
+        "name": "",
+        "group": "df69260e1c9c8150",
+        "order": 1,
+        "width": "7",
+        "height": "7",
+        "label": "X axis",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "1",
+        "removeOlderPoints": "20",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 650,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cd9ce00a0dc075a9",
+        "type": "function",
+        "z": "5a330b7698e70287",
+        "name": "",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 160,
+        "wires": [
+            [
+                "580b0918b9758da6"
+            ]
+        ]
+    },
+    {
+        "id": "e5389ae738ca98f5",
+        "type": "ui_chart",
+        "z": "5a330b7698e70287",
+        "name": "",
+        "group": "df69260e1c9c8150",
+        "order": 2,
+        "width": "7",
+        "height": "7",
+        "label": "Y axis",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "1",
+        "removeOlderPoints": "20",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 650,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7078e6d14b0dc0bb",
+        "type": "function",
+        "z": "5a330b7698e70287",
+        "name": "",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 300,
+        "wires": [
+            [
+                "e5389ae738ca98f5"
+            ]
+        ]
+    },
+    {
+        "id": "e8f60b17db4d2c80",
+        "type": "ui_chart",
+        "z": "5a330b7698e70287",
+        "name": "",
+        "group": "df69260e1c9c8150",
+        "order": 3,
+        "width": "7",
+        "height": "7",
+        "label": "Z axis",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "1",
+        "removeOlderPoints": "20",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 650,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4ced84fcb435595d",
+        "type": "function",
+        "z": "5a330b7698e70287",
+        "name": "",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 460,
+        "wires": [
+            [
+                "e8f60b17db4d2c80"
+            ]
+        ]
+    },
+    {
+        "id": "c75b354590c742eb",
+        "type": "ui_numeric",
+        "z": "5a330b7698e70287",
+        "name": "",
+        "label": "rateChoose",
+        "tooltip": "",
+        "group": "df69260e1c9c8150",
+        "order": 4,
+        "width": "4",
+        "height": "1",
+        "wrap": false,
+        "passthru": true,
+        "topic": "topic",
+        "topicType": "msg",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "className": "",
+        "x": 230,
+        "y": 620,
+        "wires": [
+            [
+                "ddf3d0cb415370d4"
+            ]
+        ]
+    },
+    {
+        "id": "ddf3d0cb415370d4",
+        "type": "ui_button",
+        "z": "5a330b7698e70287",
+        "name": "",
+        "group": "df69260e1c9c8150",
+        "order": 4,
+        "width": "2",
+        "height": "1",
+        "passthru": false,
+        "label": "button",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "rateChoose",
+        "payloadType": "str",
+        "topic": "rate",
+        "topicType": "str",
+        "x": 426.6784973144531,
+        "y": 613.1107788085938,
+        "wires": [
+            [
+                "7a261e899e14efca",
+                "055b6109bd6ce79c"
+            ]
+        ]
+    },
+    {
+        "id": "7a261e899e14efca",
+        "type": "mqtt out",
+        "z": "5a330b7698e70287",
+        "name": "",
+        "topic": "rate",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "e932a15ab698c4eb",
+        "x": 626.6784973144531,
+        "y": 613.1107788085938,
+        "wires": []
+    },
+    {
+        "id": "055b6109bd6ce79c",
+        "type": "http request",
+        "z": "5a330b7698e70287",
+        "name": "",
+        "method": "PUT",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "http://127.0.0.1:5000/currentRate",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "authType": "",
+        "senderr": false,
+        "x": 610,
+        "y": 540,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6a582072fb840f30",
+        "type": "remote-access",
+        "z": "5a330b7698e70287",
+        "confignode": "f63a4bd6320719c0",
+        "name": "Smartphone App",
+        "verbose": 0,
+        "x": 700,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e932a15ab698c4eb",
+        "type": "mqtt-broker",
+        "name": "ISCF",
+        "broker": "mqtt.beebotte.com",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "df69260e1c9c8150",
+        "type": "ui_group",
+        "name": "Accel over time",
+        "tab": "f7e4b8f7989886a3",
+        "order": 1,
+        "disp": true,
+        "width": "22",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "f63a4bd6320719c0",
+        "type": "remote-config",
+        "name": "Node-RED UI",
+        "host": "localhost",
+        "protocol": "http",
+        "port": "1880",
+        "baseurl": "/ui",
+        "instancehash": "b8xxs60q3t4botpsv1x28miqckmkkg8n3mqx05ilwwe9yyal6foslqysj8poen7l",
+        "server": "nodered02.remote-red.com",
+        "region": "de"
+    },
+    {
+        "id": "f7e4b8f7989886a3",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
